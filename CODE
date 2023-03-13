@@ -1,0 +1,45 @@
+#include <iostream>
+
+int isPrime(int num);
+void printPrimes(int lowerLimit, int upperLimit);
+
+using namespace std;
+
+int main()
+{
+    int lowerLimit, upperLimit;
+    
+    cout<<"Enter the lower and upper limit to list primes: ";
+    cin>>lowerLimit>>upperLimit;
+    printPrimes(lowerLimit, upperLimit);
+    
+    return 0;
+}
+void printPrimes(int lowerLimit, int upperLimit)
+{
+    cout<<"All prime number between "<<lowerLimit<<"to" <<upperLimit<<"are:";
+    
+    while(lowerLimit <= upperLimit)
+    {
+        if(isPrime(lowerLimit))
+        {
+            cout<<"\n "<< lowerLimit;
+        }
+        
+        lowerLimit++;
+    }
+}
+int isPrime(int num)   
+{  
+    int i;  
+      
+    for(i=2; i<=num/2; i++)    
+    {    
+        if(num % i == 0)    
+        {  
+            return 0;  
+        }    
+    }   
+      
+    return 1;   
+}
